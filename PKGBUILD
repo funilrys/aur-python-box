@@ -1,7 +1,7 @@
 # Maintainer: Nissar Chababy <contact at funilrys dot com>
 
 pkgname=python-box
-pkgver=5.2.0
+pkgver=5.3.0
 pkgrel=0
 pkgdesc="Advanced Python dictionaries with dot notation access"
 arch=('any')
