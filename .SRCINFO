@@ -1,16 +1,21 @@
 pkgbase = python-box
 	pkgdesc = Advanced Python dictionaries with dot notation access
-	pkgver = 5.3.0
-	pkgrel = 0
+	pkgver = 6.0.2
+	pkgrel = 1
 	url = https://github.com/cdgriffith/Box
-	arch = any
+	arch = x86_64
 	license = MIT
-	depends = python-toml
-	depends = python-ruamel-yaml
-	depends = python-msgpack
-	provides = python-box
-	source = https://files.pythonhosted.org/packages/source/p/python-box/python-box-5.3.0.tar.gz
-	sha256sums = 4ed4ef5d34de505a65c01e3f1911de8cdb29484fcae0c035141dce535c6c194a
+	makedepends = cython
+	makedepends = python-build
+	makedepends = python-installer
+	makedepends = python-setuptools
+	makedepends = python-wheel
+	depends = python
+	optdepends = python-msgpack
+	optdepends = python-ruamel-yaml: YAML support
+	optdepends = python-toml: TOML support
+	optdepends = python-yaml: YAML support
+	source = python-box-6.0.2.tar.gz::https://files.pythonhosted.org/packages/source/p/python-box/python-box-6.0.2.tar.gz
+	sha256sums = c15f09fa2a8730702115396b490ddc17dde3d4276a4f24eb754e35f102c41347
 
 pkgname = python-box
-
