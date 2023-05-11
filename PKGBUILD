@@ -2,7 +2,7 @@
 # Contributor: Luis Martinez <luis dot martinez at disroot dot org>
 
 pkgname=python-box
-pkgver=6.1.0
+pkgver=7.0.1
 pkgrel=1
 pkgdesc="Advanced Python dictionaries with dot notation access"
 arch=('x86_64')
