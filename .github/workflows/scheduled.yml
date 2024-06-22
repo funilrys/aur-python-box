@@ -2,6 +2,7 @@ name: Scheduled AUR package update Workflow
 on:
   schedule:
     - cron: "00 14 * * *"
+  workflow_dispatch: {}
 
 env:
   AUR_PKG_NAME: "python-box"
