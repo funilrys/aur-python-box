@@ -44,6 +44,7 @@ jobs:
         run: |
           current=$(grep -P "^pkgver" PKGBUILD | cut -d= -f2)
           latest=$(curl --silent "https://pypi.org/pypi/python-box/json" | jq -r .info.version)
+          latestUrl=$(curl --silent "https://pypi.org/pypi/python-box/json" | jq -r '.releases[.info.version] | .[] | select(.filename | test(".tar.gz")?) | .url')
 
           aurRepoDir=/tmp/${AUR_PKG_NAME}
           githubRepoDir="${PWD}"
@@ -71,6 +72,7 @@ jobs:
 
           sed "/^pkgver=/s/.*/pkgver=${latest}/" -i PKGBUILD
           sed "/^pkgrel=/s/.*/pkgrel=1/" -i PKGBUILD
+          sed "s#https:\/\/files\.pythonhosted\.org\/.*\.tar\.gz#${latestUrl}#g" -i PKGBUILD
 
           su makepkg -c "updpkgsums"
           su makepkg -c "makepkg --printsrcinfo" > .SRCINFO
